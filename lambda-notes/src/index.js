@@ -16,6 +16,7 @@ const store = createStore(dummyReducer);
 
 ReactDOM.render(
     (
+        //takes on one prop which is store
         <Provider store={store}>
             <Router>
                 <App />
