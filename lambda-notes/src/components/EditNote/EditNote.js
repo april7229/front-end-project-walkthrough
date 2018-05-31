@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './index.css';
+import DeleteNote from '../DeleteNote/DeleteNote';
 
 class EditNote extends Component {
     render() {

@@ -4,7 +4,7 @@ import './index.css';
 class DeleteNote extends Component {
     render() {
         return (
-            <div>
+            <div className='delete_wrapper'>
                 DELETE NOTE PLACEHOLDER
             </div>
         );

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import DeleteNote from '../DeleteNote/DeleteNote';
 import './index.css';
 
 class NoteView extends Component {
@@ -56,7 +57,11 @@ class NoteView extends Component {
                     </h3>
                     <div>
                         <a href='#'className='edit_delete'>edit</a>
-                        <a href='#'className='edit_delete'>delete</a>
+                        <a href='#'
+                            className='edit_delete'
+                            onClick={this.showModal}
+                        >
+                            delete</a>
                     </div>
                 </div>
                 
