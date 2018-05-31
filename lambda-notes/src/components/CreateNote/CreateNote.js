@@ -22,7 +22,7 @@ class CreateNote extends Component {
                             rows="20"
                         />
                                     
-                                <a href='#' />
+                                <a href='#' className='button_link' />
                                 <div className='nav_button createNote_button'>Save</div>
                             
                         </div>
