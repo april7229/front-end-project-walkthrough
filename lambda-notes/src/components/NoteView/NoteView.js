@@ -49,16 +49,31 @@ class NoteView extends Component {
 
     render() {
         return (
-            <div className='notesList_container'>
-                <div><h3 className='content_header'>Your Notes:</h3></div>
-                <div className='notesList'>
-                   
+            <div className='noteView_container'>
+            <div className ='content_topContent'>    
+                
+            <div>    
+                    <h3 className='content_header'>
+                    {this.state.notesArray[0].title}    
+                    </h3>
+                    <div>
+                        <a>edit</a>
+                        <a>delete</a>
+                    </div>
                 </div>
-            </div>
+                
+                    <div className='noteView'>
+                        <p className=''>
+                            {this.state.notesArray[0].body}
+                   </p>         
+                </div>
+                </div>
+            </div>    
                         
                                    
         )
     }
-   }
+}
+   
 
 export default NoteView;
