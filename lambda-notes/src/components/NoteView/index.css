@@ -9,3 +9,7 @@
     display:flex;
     justify-content: space-between;
 }
+.edit_delete{
+    padding:1rem 0.5rem;
+    color:rgb(66,66,66);
+}
