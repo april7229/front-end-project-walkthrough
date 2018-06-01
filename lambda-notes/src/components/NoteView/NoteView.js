@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import DeleteNote from '../DeleteNote/DeleteNote';
 import './index.css';
+import { Link } from 'react-router-dom';
+
 
 class NoteView extends Component {
     constructor() {
         super()
         this.state = {
+            displayDelete: false,
             notesArray: [
                 {
                     _id: 'adshfjslglff;hf;',
@@ -46,35 +49,42 @@ class NoteView extends Component {
             ]
         }
     }
-
+    // toggle logic if  state happen to be true it will be flipped false and verse a verse
+    showModal = () => {
+        this.setState({displayDelete:!this.state.displayDelete})
+     
+ }
 
     render() {
         return (
             <div className='noteView_container'>
-            <div className ='noteView_topContent'>    
-               <h3 className='content_header'>
-                    {this.state.notesArray[0].title}    
+                <div className='noteView_topContent'>
+                    <h3 className='content_header'>
+                        {this.state.notesArray[0].title}
                     </h3>
                     <div>
-                        <a href='#'className='edit_delete'>edit</a>
+                        <a to={`/edit/${this.props.match.params.id}`} className='edit_delete'>edit</a>
                         <a href='#'
                             className='edit_delete'
                             onClick={this.showModal}
                         >
-                            delete</a>
-                    </div>
+                            delete
+                            </a>
+                    </div> 
                 </div>
                 
-                    <div className='noteList'>
-                        <p className=''>
-                            {this.state.notesArray[0].body}
-                   </p>         
+                <div className='noteList'>
+                    <p className=''>
+                        {this.state.notesArray[0].body}
+                    </p>
                 </div>
-                </div>
-               
-                        
-                                   
-        )
+                <DeleteNote
+                    toggle={this.state.displayDelete
+                    }
+                     updateParent={this.showModal}
+                />
+            </div>
+          );
     }
 }
    

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './index.css';
+import { Link } from 'react-router-dom';
 
 class NotesList extends Component {
     constructor() {
@@ -10,13 +11,13 @@ class NotesList extends Component {
                     _id: 'adshfjslglff;hf;',
                     title: 'first Note',
                     body: 'Lorem  ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh',
-                    createdAt: 1527536455211,
+                    createdAt: 1527536455213,
                 },
                 {
                     _id: 'jslglff;hf;',
                     title: 'second Note',
                     body: 'Lorem  ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh',
-                    createdAt: 1527536455211,
+                    createdAt: 1527536455214,
                 },
                 {
                     _id: 'lff;hf;',
@@ -47,17 +48,20 @@ class NotesList extends Component {
     }
     generateNotes = (what, where) => {
         return (
-            <div className= 'note' key = { where + what.title } >
-                <div>
-                <h4>{what.title}</h4>
-                    <hr></hr>
-                <p>{what.body}</p>    
+            <Link to={`/note/${what._id}`}className='unstiledLink'>
+                <div className='note' key={what._id}>
+                    <div>
+                        <h4>{what.title}</h4>
+                        <hr></hr>
+                        <p>{what.body}</p>
+                    </div>
                 </div>
-                </div>
-                  )
-              }
-            
-       
+            </Link>
+        )
+
+    }
+
+
     render() {
         return (
             <div className='notesList_container'>
