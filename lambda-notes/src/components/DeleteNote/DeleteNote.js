@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 import './index.css';
+import { deleteNote } from '../../actions';
+import {connect} from 'react-redux'
 
 class DeleteNote extends Component {
     
-        
+    handleDelete = () => {
+        this.props.deleteNote(this.props.toDelete);
+        this.props.history.push('/');
+            
+        }
     render() {
       let  toggle = this.props.toggle;
         return (
@@ -15,7 +21,7 @@ class DeleteNote extends Component {
                     <div className='delete_buttons_wrapper'>
                     <div
                              className='button--danger'
-                                onClick={this.showModal}   
+                                onClick={this.handleDelete}
                             >    
                                     DELETE
                                 </div>
@@ -34,4 +40,4 @@ class DeleteNote extends Component {
     
 
 
-export default DeleteNote;
+export default connect(null,{deleteNote}) (DeleteNote);
