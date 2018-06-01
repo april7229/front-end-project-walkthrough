@@ -1,4 +1,4 @@
-import { DELETE_NOTE } from '../actions';
+import { DELETE_NOTE } from '../../actions';
 
 const initialState = [,
     {

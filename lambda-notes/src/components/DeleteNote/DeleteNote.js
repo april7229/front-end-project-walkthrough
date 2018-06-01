@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './index.css';
 import { deleteNote } from '../../actions';
-import {connect} from 'react-redux'
+import { connect } from 'react-redux';
 
 class DeleteNote extends Component {
     
@@ -11,7 +11,7 @@ class DeleteNote extends Component {
             
         }
     render() {
-      let  toggle = this.props.toggle;
+      let toggle = this.props.toggle;
         return (
             <div className={toggle ? 'delete_wrapper':'hidden'}>
                 <div>
@@ -40,4 +40,4 @@ class DeleteNote extends Component {
     
 
 
-export default connect(null,{deleteNote}) (DeleteNote);
+export default connect(null,{deleteNote})(DeleteNote);
