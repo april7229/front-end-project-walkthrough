@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 
+
 const mapStateToProps = (state) => {
     return {
         notesArray: state
@@ -19,7 +20,7 @@ class NoteView extends Component {
             displayDelete: false,
             match:[],
 
-            notesArray: [],
+            
         }
     }
     componentWillMount() {//fires before render()

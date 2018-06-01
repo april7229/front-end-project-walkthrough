@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import './index.css';
 import { connect } from 'react-redux';
-
-const mapStateToProps = (state) => {
+import { editNote } from '../../actions';
+    
+    
+    const mapStateToProps = (state) => {
     return {
         notesArray: state
     }
@@ -20,7 +22,8 @@ class EditNote extends Component {
         let matched = this.props.notesArray.filter((item) => item._id === routeId);
         this.setState({matched})
     }
-    handleUpdate = () =>  {
+    handleUpdate = () => {
+        this.props.editNote(this.state.matched[0]);
         this.props.history.push('/');
     }
     handleChange = (e) => {
@@ -69,4 +72,4 @@ class EditNote extends Component {
 }
 
 
-export default connect(mapStateToProps,{/*Actions*/}) (EditNote);
+export default connect(mapStateToProps,{editNote}) (EditNote);

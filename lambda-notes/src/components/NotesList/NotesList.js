@@ -15,9 +15,9 @@ class NotesList extends Component {
         
         }
     }
-    componentWillMount() {//fires before renderz()
+    componentWillMount() {//fires before render()
         let reversed = Array.from(this.props.notesArray).reverse();
-        // this.setState({notesArray})
+        this.setState({notesArray:reversed})
     }
     generateNotes = (what, where) => {
         return (
