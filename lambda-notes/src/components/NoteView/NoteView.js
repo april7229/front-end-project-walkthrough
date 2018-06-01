@@ -22,7 +22,7 @@ class NoteView extends Component {
             notesArray: [],
         }
     }
-    componentWillMount() {
+    componentWillMount() {//fires before render()
         let routeId = this.props.match.params.id;
         let matched = this.props.notesArray.filter((item) => item._id === routeId);
         this.setState({matched})

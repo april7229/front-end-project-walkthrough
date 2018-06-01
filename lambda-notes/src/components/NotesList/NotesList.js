@@ -15,6 +15,10 @@ class NotesList extends Component {
         
         }
     }
+    componentWillMount() {//fires before renderz()
+        let reversed = Array.from(this.props.notesArray).reverse();
+        // this.setState({notesArray})
+    }
     generateNotes = (what, where) => {
         return (
             <Link to={`/note/${what._id}`} className='unstiledLink' key={what._id}>
@@ -42,4 +46,5 @@ class NotesList extends Component {
                          );
     }
 }
-export default connect(mapStateToProps,{/*ActionHere*/}) (NotesList);
+export default connect(mapStateToProps, {/*ActionHere*/ })(NotesList);
+//connect connects redux to props props is = to notearray      notelist is only listening

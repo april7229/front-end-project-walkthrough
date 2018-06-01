@@ -1,4 +1,4 @@
-export const Delete_Note = 'DELETE_NOTE';
+export const DELETE_NOTE = 'DELETE_NOTE';
 
 
 export const deleteNote = (id) => {

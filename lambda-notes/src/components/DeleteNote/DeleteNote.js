@@ -6,12 +6,12 @@ import { connect } from 'react-redux';
 class DeleteNote extends Component {
     
     handleDelete = () => {
-        this.props.deleteNote(this.props.toDelete);
-        this.props.history.push('/');
+        this.props.deleteNote(this.props.toDelete);// this comes from redux
+        this.props.history.push('/');// this comes from brower Router
             
         }
     render() {
-      let toggle = this.props.toggle;
+        let toggle = this.props.toggle;
         return (
             <div className={toggle ? 'delete_wrapper':'hidden'}>
                 <div>
@@ -19,18 +19,16 @@ class DeleteNote extends Component {
                 </div>
                 
                     <div className='delete_buttons_wrapper'>
-                    <div
-                             className='button--danger'
+                    <div className='button--danger'
                                 onClick={this.handleDelete}
                             >    
                                     DELETE
                                 </div>
                             <div
                                 className='button'
-                                onClick={this.showModal}   
+                                onClick={this.props.showModal}   
                             >
                                 No
-                                
                     </div>
                 </div>
             </div>    
@@ -40,4 +38,5 @@ class DeleteNote extends Component {
     
 
 
-export default connect(null,{deleteNote})(DeleteNote);
+export default connect(null, { deleteNote })(DeleteNote);
+//connect to action as prop to deletenote
